@@ -10,22 +10,17 @@ describe('AppComponent', () => {
         }).compileComponents();
     }));
 
-    it('should create the app', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app).toBeTruthy();
-    });
-
-    it(`should have as title 'timer'`, () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.title).toEqual('timer');
-    });
-
-    it('should render title', () => {
+    it('should render title as "My Timer"', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.content span').textContent).toContain('timer app is running!');
+        expect(compiled.querySelector('h1').textContent).toContain('My Timer');
+    });
+
+    it('should render sub title as "This is my first timer demo"', () => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('h3').textContent).toContain('This is my first timer demo');
     });
 });
